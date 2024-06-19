@@ -1,0 +1,28 @@
+{
+  "name": "ae-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "watch": "node ./scripts/build.js -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-multi-entry": "^6.0.1",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.14.2",
+    "chokidar": "^3.6.0",
+    "prettier": "^3.3.2",
+    "rollup": "^4.18.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "shared": "workspace:*",
+    "types-for-adobe": "^7.2.1"
+  }
+}

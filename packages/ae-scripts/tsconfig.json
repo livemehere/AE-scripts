@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target":"ES5",
+    "moduleDetection": "force",
+    "moduleResolution": "node",
+    "strict": true,
+    "allowJs": true
+  }
+}

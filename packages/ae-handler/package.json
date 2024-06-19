@@ -1,0 +1,20 @@
+{
+  "name": "ae-handler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "run-script": "node src/index.js ../../ae-scripts/dist/index.jsx",
+    "watch-script": "node src/index.js ../../ae-scripts/dist/index.jsx -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "shared": "workspace:*"
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0"
+  }
+}
