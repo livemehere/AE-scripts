@@ -19,9 +19,10 @@ function getAlignEnum(align) {
 }
 
 function getRect(layer, time) {
+    if (time === void 0) { time = 0; }
     return layer.sourceRectAtTime(time, false);
 }
-function setFont(layer, opts) {
+function setTextLayerHelper(layer, opts) {
     var _a;
     app.beginUndoGroup("Set Text Layer Font");
     var textDocumentProperty = layer.property("Source Text");
@@ -72,48 +73,4 @@ function setFont(layer, opts) {
     app.endUndoGroup();
 }
 
-for (var i = 1; i <= app.project.numItems; i++) {
-    var item = app.project.item(i);
-    if (item instanceof CompItem) {
-        item.remove();
-    }
-}
-var comp = app.project.items.addComp("my comp", 1920, 1080, 1, 10, 60);
-comp.openInViewer();
-var textLayer = comp.layers.addText("hello, world");
-getRect(textLayer, 0);
-setFont(textLayer, {
-    text: "kong is nice!!",
-    justification: "center",
-    fontSize: 50,
-    stroke: {
-        width: 2,
-        color: "#0000ff",
-        overFill: true,
-    },
-    tracking: 150,
-    applyFill: false,
-    scale: 200,
-    rotation: 45,
-    opacity: 50,
-});
-// textLayer.scale.setValue([400, 400]);
-//
-// const rect = textLayer.sourceRectAtTime(0, false);
-// textLayer.anchorPoint.setValue([0, -rect.height / 2]);
-// textLayer.transform.rotation.setValue(45);
-//
-// const textDocumentProperty = textLayer.property(
-//   "Source Text",
-// ) as TextDocumentProperty;
-// const textDocument = textDocumentProperty.value;
-// textDocument.fontSize = 30;
-// textDocument.fillColor = [1, 0, 0];
-// textDocument.text = "kong";
-// textDocument.justification = ParagraphJustification.CENTER_JUSTIFY;
-// textDocument.strokeColor = [0, 1, 0];
-// textDocument.strokeWidth = 5;
-// textDocument.strokeOverFill = true;
-// textDocument.applyStroke = true;
-//
-// textDocumentProperty.setValue(textDocument);
+export { getRect, setTextLayerHelper };
